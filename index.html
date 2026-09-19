@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>فروشگاه حسینی | مواد غذایی، پروتئینی و بهداشتی</title>
+  <meta name="description" content="فروشگاه حسینی در قم؛ عرضه انواع محصولات پروتئینی، خواربار و محصولات بهداشتی با امکان سفارش تلفنی و ارسال.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary: #1f6f50;
+      --primary-dark: #15543c;
+      --accent: #e7b84b;
+      --cream: #f8f7f2;
+      --white: #ffffff;
+      --text: #1d2923;
+      --muted: #718078;
+      --border: #e4e8e4;
+      --shadow: 0 18px 50px rgba(25, 55, 43, 0.08);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* =========================
+       Header
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(248, 247, 242, 0.92);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 18px;
+      padding: 10px 14px 10px 20px;
+      backdrop-filter: blur(15px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 19px;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: white;
+      border-radius: 13px;
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: #536159;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-call {
+      background: var(--primary);
+      color: white;
+      padding: 9px 17px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-call:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       Hero
+    ========================= */
+
+    .hero {
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(31,111,80,.08);
+      top: -100px;
+      left: -180px;
+      filter: blur(2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e8f2ed;
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 7px 13px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      width: 7px;
+      height: 7px;
+      background: #36a66f;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(54,166,111,.12);
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.25;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      color: #17231e;
+    }
+
+    h1 strong {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 600px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .25s;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px rgba(31,111,80,.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-light {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-light:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* =========================
+       Floating Store Card
+    ========================= */
+
+    .hero-visual {
+      position: absolute;
+      left: 0;
+      bottom: 70px;
+      width: 420px;
+      height: 430px;
+      z-index: 1;
+    }
+
+    .store-card {
+      position: absolute;
+      inset: 30px;
+      background: white;
+      border-radius: 38px;
+      box-shadow: var(--shadow);
+      padding: 32px;
+      transform: rotate(-4deg);
+      border: 1px solid rgba(0,0,0,.03);
+    }
+
+    .store-circle {
+      width: 90px;
+      height: 90px;
+      background: #e9f3ee;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      margin-bottom: 25px;
+    }
+
+    .store-card h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .store-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .mini-info {
+      display: grid;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .mini-info div {
+      background: #f8f9f7;
+      border-radius: 13px;
+      padding: 10px 13px;
+      font-size: 12px;
+    }
+
+    /* =========================
+       Section
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 48px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.4;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       Categories
+    ========================= */
+
+    .categories {
+      background: white;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .category {
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: var(--radius);
+      transition: .3s;
+      background: white;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      border-color: #c9ddd3;
+      box-shadow: var(--shadow);
+    }
+
+    .category-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      background: #f0f6f2;
+      margin-bottom: 22px;
+    }
+
+    .category h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .category p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       Features
+    ========================= */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      text-align: center;
+      background: white;
+      padding: 25px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .feature-icon {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    .feature h4 {
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .feature p {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* =========================
+       About
+    ========================= */
+
+    .about {
+      background: #f1f5f1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--primary);
+      color: white;
+      padding: 45px;
+      border-radius: 35px;
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-box::after {
+      content: "ح";
+      position: absolute;
+      font-size: 240px;
+      font-weight: 800;
+      opacity: .07;
+      left: -20px;
+      bottom: -80px;
+    }
+
+    .about-number {
+      font-size: 65px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .about-box p {
+      opacity: .8;
+      margin-top: 8px;
+    }
+
+    .about-text h2 {
+      font-size: 36px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .check-list div {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .check {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      background: #dcebe3;
+      color: var(--primary);
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    /* =========================
+       Contact
+    ========================= */
+
+    .contact-card {
+      background: var(--primary);
+      color: white;
+      border-radius: 32px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact-card h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card > div > p {
+      color: rgba(255,255,255,.75);
+      font-size: 14px;
+      max-width: 450px;
+    }
+
+    .contact-items {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 15px 18px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 11px;
+      opacity: .65;
+      font-weight: 400;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        min-height: auto;
+        padding: 150px 0 100px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .contact-card {
+        grid-template-columns: 1fr;
+        padding: 35px;
+        gap: 30px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        padding: 9px 10px 9px 14px;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav-call {
+        font-size: 11px;
+        padding: 8px 11px;
+      }
+
+      h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .about-box {
+        padding: 35px;
+      }
+
+      .about-text h2,
+      .contact-card h2 {
+        font-size: 28px;
+      }
+
+      .contact-card {
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <nav class="nav">
+
+        <a href="#" class="logo">
+          <span class="logo-icon">🛒</span>
+          فروشگاه حسینی
+        </a>
+
+        <div class="nav-links">
+          <a href="#products">محصولات</a>
+          <a href="#about">درباره فروشگاه</a>
+          <a href="#contact">تماس با ما</a>
+        </div>
+
+        <a href="tel:02531234567" class="nav-call">
+          تماس و سفارش
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            <span></span>
+            آماده خدمت‌رسانی به شما
+          </div>
+
+          <h1>
+            خرید روزانه،
+            <br>
+            <strong>ساده و مطمئن</strong>
+          </h1>
+
+          <p class="hero-description">
+            فروشگاه حسینی، همراه شما برای تهیه انواع محصولات پروتئینی،
+            خواربار و محصولات بهداشتی؛ با امکان سفارش تلفنی و ارسال.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="tel:02531234567" class="btn btn-primary">
+              📞 تماس و سفارش
+            </a>
+
+            <a href="#products" class="btn btn-light">
+              مشاهده محصولات
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+        <div class="store-card">
+
+          <div class="store-circle">🛍️</div>
+
+          <h3>فروشگاه حسینی</h3>
+
+          <p>
+            خرید آسان محصولات مورد نیاز خانواده
+          </p>
+
+          <div class="mini-info">
+            <div>📍 قم، خیابان انقلاب، کوچه ۳۰</div>
+            <div>🕐 هر روز ۸ صبح تا ۹ شب</div>
+            <div>🚚 سفارش تلفنی و ارسال</div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section class="categories" id="products">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <span>دسته‌بندی محصولات</span>
+          <h2>هر چیزی که برای خرید روزانه نیاز دارید</h2>
+          <p>
+            مجموعه‌ای از محصولات مصرفی روزمره در یک فروشگاه محلی و در دسترس.
+          </p>
+        </div>
+
+        <div class="category-grid">
+
+          <div class="category">
+            <div class="category-icon">🥩</div>
+            <h3>محصولات پروتئینی</h3>
+            <p>
+              انواع محصولات پروتئینی برای خرید روزانه و خانوادگی.
+            </p>
+          </div>
+
+          <div class="category">
+            <div class="category-icon">🛒</div>
+            <h3>خواربار</h3>
+            <p>
+              انواع اقلام و کالاهای مورد نیاز مصرف روزانه.
+            </p>
+          </div>
+
+          <div class="category">
+            <div class="category-icon">🧴</div>
+            <h3>محصولات بهداشتی</h3>
+            <p>
+              محصولات بهداشتی و مصرفی مورد نیاز خانواده.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section>
+
+      <div class="container">
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="feature-icon">📞</div>
+            <h4>سفارش تلفنی</h4>
+            <p>ثبت سفارش از طریق تماس</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <h4>ارسال</h4>
+            <p>امکان ارسال سفارش</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">🕐</div>
+            <h4>ساعت کاری</h4>
+            <p>۸ صبح تا ۹ شب</p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">📍</div>
+            <h4>موقعیت محلی</h4>
+            <p>خیابان انقلاب قم</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-box">
+
+            <div class="about-number">۱۰۰</div>
+            <h3>متر فضای فروشگاه</h3>
+            <p>
+              فضایی مناسب برای خرید راحت و دسترسی به کالاهای مورد نیاز.
+            </p>
+
+          </div>
+
+          <div class="about-text">
+
+            <h2>
+              خرید روزمره، نزدیک و راحت
+            </h2>
+
+            <p>
+              فروشگاه حسینی در خیابان انقلاب قم قرار دارد و مجموعه‌ای
+              از محصولات پروتئینی، خواربار و محصولات بهداشتی را ارائه می‌کند.
+            </p>
+
+            <div class="check-list">
+
+              <div>
+                <span class="check">✓</span>
+                تنوع محصولات مصرفی
+              </div>
+
+              <div>
+                <span class="check">✓</span>
+                امکان سفارش تلفنی
+              </div>
+
+              <div>
+                <span class="check">✓</span>
+                امکان ارسال سفارش
+              </div>
+
+              <div>
+                <span class="check">✓</span>
+                فعالیت هر روز از ۸ صبح تا ۹ شب
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div>
+
+            <h2>
+              سفارش یا سوالی دارید؟
+            </h2>
+
+            <p>
+              برای اطلاع از محصولات و ثبت سفارش، با فروشگاه حسینی تماس بگیرید.
+            </p>
+
+            <br>
+
+            <a
+              href="tel:02531234567"
+              class="btn"
+              style="background:white;color:#1f6f50;"
+            >
+              📞 تماس با فروشگاه
+            </a>
+
+          </div>
+
+
+          <div class="contact-items">
+
+            <div class="contact-item">
+              <span>📍</span>
+              <div>
+                <strong>آدرس</strong>
+                قم، خیابان انقلاب، کوچه ۳۰
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span>☎️</span>
+              <div>
+                <strong>شماره تماس</strong>
+                <a href="tel:02531234567">
+                  02531234567
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span>🕐</span>
+              <div>
+                <strong>ساعت کاری</strong>
+                ۸ صبح تا ۹ شب
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> فروشگاه حسینی — تمامی حقوق محفوظ است.
+    </div>
+  </footer>
+
+
+  <script>
+
+    // تغییر ظاهر هدر هنگام اسکرول
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 30) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+
+    // سال جاری
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // انیمیشن ورود المان‌ها
+    const observer = new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    document
+      .querySelectorAll(".category, .feature, .about-box, .about-text, .contact-card")
+      .forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition = "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+      });
+
+  </script>
+
+</body>
+</html>
